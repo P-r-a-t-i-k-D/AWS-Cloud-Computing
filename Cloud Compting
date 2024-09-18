@@ -1,1 +1,25 @@
+1.	What Is Cloud Computing?
+	cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the Internet (“the cloud”). It allows users to access these resources on demand without the need to manage physical resources themselves.
 
+
+2.	Benefits of Cloud Computing?
+	Flexibility: Users can access cloud services from anywhere with an internet connection. 
+	Efficiency: Enterprises can develop new applications and rapidly get them into production. 
+	Cost savings: Users typically pay only for cloud services they use, helping to lower operating costs. 
+	Scalability: Users can scale as their business needs change.
+
+
+3.	Types of Cloud Computing Services:
+
+	There are three main types of cloud computing Service 
+	Infrastructure as a Service (IaaS) provides on demand access to compute, Storage, networking and virtualization 
+	Platform as a service (PaaS) Provides hardware and Software resources needed for cloud application development. 
+	Software as a Service (SaaS) I Provides a full application stack as a cloud Service, Including maintenance and management.
+
+4.	Types of Cloud Computing:
+
+	cloud computing are 4 types  
+	Private Cloud: A Private cloud computing environment that is dedicated to a single organisation of user got totally known as an internal of corporate cloud. Private cloud can be posted on premises, or through a private cloud provider  
+	Public cloud: A public cloud is a computing model that allows individuals and organizations to access services like storage, computing & applications over the Interment. These services are provided by third Party Providers and can be accessed on-demand or as a subscription. The cost of public cloud depends on the amount of storage, bandwidth one CPU cycle used. 
+	Hybrid cloud: A Hybrid cloud is a computing environment that combines two or more types of Cloud environment to run application and store data. The environment can include private clouds, public clouds and on premises data centres and they must be tightly connected to function as one Infrastructure.
+	Multi cloud: Multi cloud is the practice or using services from multiple cloned Providers Simultaneously the goal of multi cloud is to give organization flexibility to use the best computing environment for each workload.
