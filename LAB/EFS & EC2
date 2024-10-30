@@ -30,6 +30,8 @@ Here are the steps I took to create the lab below I mentioned the steps briefly:
 5.	Attach EFS: Created and mounted EFS file system to all instances.
 6.	Test Connectivity: Verified access to EFS and shared files.
 7.	Final Verification: Checked file access across instances.
+
+8.	
 Steps to Launch Amazon_Linux_2 and Attach the EFS in it
 	
 1.	Launch EC2 Instance (Amazon_Linux_2) with Public IP
@@ -99,9 +101,6 @@ Go to File System under NFS Click on – File system ID – Click on attach – 
 •	cd File EFS (For go to the directory)
 •	sudo vi file1.txt (File Name) – i (For edit the file) Add some comments in the File – Press Esc then type :wq! - Enter  (For create and save the File)
 •	sudo cat file1.txt (For see the Comment in the file)
-
-
-
 
 
 
