@@ -5,7 +5,8 @@ Lab Scenario
 Note: In AWS, security groups are stateful. This means if you let traffic come into your instance, the responses can leave without needing specific outbound rules. So, once you allow an incoming request, the replies are automatically allowed out.
 
 
-Need to below mentioned Allow Inbound rules (Also you can allow as per your requirement)
+Need to allow below mentioned Inbound rules (Also you can allow as per your requirement)
+
 
 EFS: Elastic File System
 
