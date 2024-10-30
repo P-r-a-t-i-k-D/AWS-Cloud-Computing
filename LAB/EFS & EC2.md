@@ -6,6 +6,8 @@ Note: In AWS, security groups are stateful. This means if you let traffic come i
 
 
 Need to allow below mentioned Inbound rules (Also you can allow as per your requirement)
+![image](https://github.com/user-attachments/assets/b85351a4-f46b-4a15-a711-c417983008d6)
+
 
 
 EFS: Elastic File System
