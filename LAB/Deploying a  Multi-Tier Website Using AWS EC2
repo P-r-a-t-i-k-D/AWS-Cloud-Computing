@@ -29,7 +29,7 @@ Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing
 
 
 Step-1
-1.	Launch an ec-2 Instance with your desired access here I Allow all-traffic to EC2 instance`.
+1.	Launch an ec-2 Instance with your desired access here I Allow all-traffic to EC2 instance.
 2.	Set your necessary In-Bound and Out-Bound rules in IGW.
 
 3.	Connect the ec-2 machine and perform the following commands.
