@@ -1,0 +1,106 @@
+AWS LAB Scenario:
+
+Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing
+ capacity in the Amazon Web Services (AWS) cloud. Using Amazon EC2
+ eliminates your need to invest in hardware up front so you can develop and
+ deploy applications faster. You can use Amazon EC2 to launch as many or as
+ few virtual servers as you need, configure security and networking, and manage
+ storage. Amazon EC2 enables you to scale up or down to handle changes in
+ requirements or spikes in popularity, reducing your need to forecast traffic.
+ Problem Statement:
+ Company ABC wants to move their product to AWS. They have the following
+ things set up right now:
+ 1. MySQL DB
+ 2. Website (PHP)
+ The company wants high availability on this product, therefore wants Auto
+ Scaling to be enabled on this website.
+ Steps to Solve:
+ 1. Launch an EC2 Instance
+ 2. Enable Auto Scaling on these instances (minimum 2)
+ 3. Create an RDS Instance
+ 4. Create Database & Table in RDS instance:
+	a. Database name: intel
+ 	b. Table name: data
+ 	c. Database password: intel123
+ 5. Change hostname in website
+ 6. Allow traffic from EC2 to RDS instance
+ 7. Allow all-traffic to EC2 instance
+
+
+
+Step-1
+1.	Launch an ec-2 Instance with your desired access here I Allow all-traffic to EC2 instance`.
+2.	Set your necessary In-Bound and Out-Bound rules in IGW.
+
+3.	Connect the ec-2 machine and perform the following commands.
+•	sudo apt update = 👉 Checks for the latest software list.
+•	sudo apt upgrade –y = 👉 Installs all available updates.
+•	sudo apt install apache2 –y = 👉 Installs the Apache web server on your system.
+🕸️ Apache lets you host websites on your computer.
+•	sudo systemctl start apache2 = 👉 Starts the Apache web server right now.
+🟢 Like turning on the website service.
+•	sudo systemctl enable apache2 = 👉 Makes sure Apache starts automatically every time the system boots.
+🔁 Like setting it to auto-start when your PC turns on.
+•	sudo add-apt-repository -y ppa:ondrej/php = 👉 Adds a trusted source to install older or newer PHP versions like PHP 5.6.
+•	sudo apt install php5.6 = 👉 Installs PHP version 5.6, used to run old PHP websites or apps.
+•	sudo apt install php5.6-mysqli = 👉 Installs the MySQLi extension for PHP 5.6, so PHP can connect to MySQL.
+•	sudo apt install mysql-server = 👉 Installs the MySQL database server to store and manage your data.
+•	sudo apt install mysql-client = 👉 Installs the tool to connect to MySQL from the terminal and run commands.
+
+
+Step-2
+1.	Create MySql Database with your desired configuration as per my project I choose freetier and give private access.
+2.	Goto ec-2 machine connect the database using DB endpoint below is the command.
+•	mysql -h my-php-db.cjikke8kuhlm.us-east-1.rds.amazonaws.com -u admin –p = 👉 This command connects your terminal to your MySQL database on AWS RDS using the given host, username, and password
+🔍 What the command does:
+Option	                          Meaning
+mysql	                       Starts the MySQL command-line client
+-h	                         Hostname (your RDS database address)
+-u	                         Username (in this case, admin)
+-p	                         Prompts for password (you’ll type intel123 after hitting Enter)
+
+1.	
+After connect your DB use your DB and create table in it after put the data manually for checking below I mentioned the commands.
+•	show databases; = 👉 See all the databases on the server.
+•	use intel; = 👉 Open or switch to the database named intel. You are now working inside the intel database, so any queries you run (like creating tables or inserting data) will affect this database.
+•	show tables; = 👉 List all the tables in that database.
+•	create table data(firstname varchar(50), email varchar(50)); = 👉 Create a new table named data with two columns:
+1.	firstname – stores text up to 50 characters
+2.	email – stores email addresses (also text up to 50 characters)
+•	insert into data(firstname, email) values ("Pratik", "pratik@gmail.com"); = 👉 This command adds one row into the data table.
+•	select * from data; = 👉 Show all the rows and all the columns from the table named data.
+2.	After check your DB Connectivity Exit MySQL.
+3.	Go to Apache root folder and update PHP code
+•	cd /var/www/html
+4.	Open the code file and change the DB endpoint then save it and exit.
+•	sudo nano index.php   # 👉 Update DB host to RDS endpoint.
+
+Now you can put your info in the website and it’s stored directly in your database.
+To check the data from DB, use the previous commands.
+
+
+
+
+Step-3
+1.	Goto Instances select your ec-2 goto action and Create a Amazon Machine Image from your ec-2.
+
+Step-4
+2.	Create Launch Template Name it, Select your Image, Select the same key pair of the ec-2, Select instance type, Select the same VPC & IGW and create launch template.
+3.	Goto Auto Scaling Group and create ASG, Name it, Select your Launch Template, next. 
+4.	Select the VPC and Availability Zones and subnets, next.
+5.	Select Attach to a new load balancer, Select Application Load Balancer, Select Load Balancer Internet Facing, Create a Target Group, next.
+6.	Select Desired Capacity, also Select Min & Max Desired Capacity, next.
+7.	Give tag to your ASG, next.
+8.	Create Auto Scaling Group.
+9.	Also you can connect your website through Application Load Balancer DNS.  
+
+
+
+
+
+
+
+
+
+
+
